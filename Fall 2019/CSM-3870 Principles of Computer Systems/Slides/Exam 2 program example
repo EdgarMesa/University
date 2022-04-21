@@ -1,0 +1,43 @@
+Exam 2 program example
+
+.ORIG x3000
+AND R0,R0, #0		;	 R0 = 0, R0 will hold the current sum
+
+;; for(R1 = N;R1 <= 1 N;R1--)
+
+LD R1, N			; LD R1,#5
+LOOP BRnz END		; BRnz #3 
+ADD R0, R1, R0		; R0 += R1, add the current term to sum 
+ADD R1, R1, #-1		; R1--, 0x127F 0001 0010 0111 1111, .FILL x0127F
+BRnzp  LOOP			; BRnzp #-4, x0FFC 0000 1111 1111 1100, .FILL x0FFC
+END	HALT			; xF025
+N .FILL #100
+
+.END
+
+
+
+
+Symbol table
+
+LOOP x3002
+END	 x3006
+N	 x3007
+
+
+
+DO WHILE LOOP
+
+.ORIG x3000
+AND R0,R0, #0		;	 R0 = 0, R0 will hold the current sum
+
+;; for(R1 = N;R1 <= 1 N;R1--)
+
+LD R1, N			; LD R1,#5 
+LOOP ADD R0, R1, R0	; R0 += R1, add the current term to sum 
+ADD R1, R1, #-1		; R1--
+BRp  LOOP			; BRnzp #-4
+END	HALT			; xF025
+N .FILL #100
+
+.END

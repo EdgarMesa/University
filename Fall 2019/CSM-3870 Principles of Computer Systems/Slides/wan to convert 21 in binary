@@ -1,0 +1,23 @@
+wan to convert 21 in binary 
+biggest power of two that fits in 21
+16
+ 								
+
+21-16 = 5						+/-  16  8  4  2  1
+0 5-4 = 1
+1-1 = 0						-	 1   0  1   0  1
+
+
+21/2 = 10 --- odd put a one
+10/2 = 5 --- even put a cero
+5/2 = 2 = --- odd put a one
+2/2 = 1 --- even put a cero
+1 / 2 = 0 --- odd we put a cero
+0 we stop 
+
+
+combo box
+int		DR          8|9|A|B|C|D|E|F|a|b|c|d|e|f
+
+ADD		R0
+AND		R1
